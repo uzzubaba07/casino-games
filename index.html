@@ -161,6 +161,9 @@
             .game-card-title {
                 font-size: 1em;
             }
+            .side-gif {
+                display: none; /* Hide GIFs on mobile */
+            }
         }
         @media (min-width: 768px) {
             .header {
@@ -173,28 +176,31 @@
                 padding: 20px 40px;
                 font-size: 1.5em;
             }
-        }
-        .side-gif {
-            position: fixed;
-            top: 50%;
-            width: 150px; /* Increased width for better visibility */
-            transform: translateY(-50%);
-            z-index: 1000;
-        }
-        .side-gif.left {
-            left: 10px;
-        }
-        .side-gif.right {
-            right: 10px;
+            .side-gif {
+                position: fixed;
+                top: 50%;
+                width: 150px; /* Increased width for better visibility */
+                transform: translateY(-50%);
+                z-index: 1000;
+            }
+            .side-gif.left {
+                left: 10px;
+            }
+            .side-gif.right {
+                right: 10px;
+            }
         }
     </style>
 </head>
 <body>
     
     <div class="header">
+        <video autoplay muted loop>
+            <source src="casino-video.mp4" type="video/mp4">
+        </video>
         <h1>AMANDA RODRIGUEZ</h1>
         <div class="cta">
-            <button onclick="playSound()">Register with your Number for 5$ Freeplay</button>
+            <button onclick="playSound()">Register with your phone number to get 5$ Bonus </button>
         </div>
     </div>
     <div class="container">
@@ -283,6 +289,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-   
+    
 </body>
 </html>
