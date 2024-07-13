@@ -10,26 +10,59 @@
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #343a40;
+            background-color: #111;
+            color: #fff;
             margin: 0;
             padding: 0;
         }
-        #casino-name {
-            background: linear-gradient(90deg, #007bff, #6c757d);
-            color: #fff;
-            padding: 30px 0;
-            width: 100%;
-            text-align: center;
+        .header {
+            position: relative;
+            height: 400px;
+            background: url('casino-background.jpg') no-repeat center center/cover;
+            overflow: hidden;
         }
-        #casino-name h1 {
-            margin: 0;
+        .header video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .header h1 {
+            color: #ffc107;
+            text-align: center;
+            padding-top: 150px;
             font-size: 3em;
-            text-transform: uppercase;
             letter-spacing: 2px;
+        }
+        .header .cta {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .header .cta button {
+            background: #ffc107;
+            color: #111;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        .header .cta button:hover {
+            background: #ffca2c;
+        }
+        .navbar {
+            margin-bottom: 0;
         }
         .container {
             margin: 20px auto;
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
         }
         .game-card {
             transition: transform 0.3s, box-shadow 0.3s;
@@ -37,16 +70,23 @@
             border-radius: 10px;
             overflow: hidden;
             margin-bottom: 20px;
+            background-color: #333;
+            border: 1px solid #444;
+            color: #fff;
         }
         .game-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
         }
         .game-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             display: block;
+            transition: transform 0.3s;
+        }
+        .game-card img:hover {
+            transform: scale(1.1);
         }
         .game-card-body {
             text-align: center;
@@ -90,8 +130,16 @@
         footer a:hover {
             color: #0056b3;
         }
+        .parallax {
+            background-image: url('casino-background.jpg');
+            min-height: 400px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
         @media (max-width: 767.98px) {
-            #casino-name h1 {
+            .header h1 {
                 font-size: 2em;
             }
             .game-card img {
@@ -104,11 +152,58 @@
                 font-size: 1em;
             }
         }
+        @media (min-width: 768px) {
+            .header {
+                height: 500px;
+            }
+            .header h1 {
+                font-size: 4em;
+            }
+            .header .cta button {
+                padding: 20px 40px;
+                font-size: 1.5em;
+            }
+        }
     </style>
+    <!-- Sound Effect Script -->
+    <script>
+        function playSound() {
+            var audio = new Audio('click-sound.mp3');
+            audio.play();
+        }
+    </script>
 </head>
 <body>
-    <div id="casino-name">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href="#">Casino</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Games</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Promotions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="header">
+        <video autoplay muted loop>
+            <source src="casino-video.mp4" type="video/mp4">
+        </video>
         <h1>AMANDA RODRIGUEZ</h1>
+        <div class="cta">
+            <button onclick="playSound()">Join Now</button>
+        </div>
     </div>
     <div class="container">
         <div class="row">
@@ -189,7 +284,6 @@
         <p>&copy; 2024 AMANDA RODRIGUEZ. All rights reserved.</p>
         <p><a href="https://your-website.com/contact">Contact Us</a> | <a href="https://your-website.com/privacy">Privacy Policy</a></p>
     </footer>
-
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
