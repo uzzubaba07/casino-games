@@ -6,6 +6,11 @@
     <title>AMANDA RODRIGUEZ</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
     <!-- Custom CSS -->
     <style>
         body {
@@ -43,9 +48,23 @@
         }
         .header h1 {
             color: #ffc107;
-            font-size: 3em;
+            font-size: 4em;
             letter-spacing: 2px;
-            animation: fadeIn 2s ease-in-out;
+            animation: fadeIn 2s ease-in-out, textGlow 1.5s infinite alternate;
+            font-family: 'Lobster', cursive;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px #ff416c, 0 0 20px #ff416c, 0 0 30px #ff416c; }
+            to { text-shadow: 0 0 20px #ff4b2b, 0 0 30px #ff4b2b, 0 0 40px #ff4b2b; }
         }
         .header .cta {
             margin-top: 20px;
@@ -153,10 +172,6 @@
         .side-gif.right {
             right: 10px;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
                 transform: translateY(0);
@@ -189,9 +204,6 @@
 </head>
 <body>
     <div class="header">
-        <video autoplay muted loop>
-            <source src="casino-video.mp4" type="video/mp4">
-        </video>
         <h1>AMANDA RODRIGUEZ</h1>
         <div class="cta">
             <button onclick="playSound()">Register with your phone number to get 5$ Bonus</button>
@@ -283,16 +295,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Sound Effect Script -->
-    <script>
-        function playSound() {
-            var audio = new Audio('https://github.com/uzzubaba07/casino-games/blob/main/click-sound.mp3?raw=true');
-            audio.play();
-        }
-        
-        document.querySelectorAll('a, button, .game-card').forEach(function(element) {
-            element.addEventListener('click', playSound);
-        });
-    </script>
+   
 </body>
 </html>
