@@ -17,6 +17,7 @@
             background-image: url('https://github.com/uzzubaba07/casino-games/blob/main/background.jpg?raw=true');
             background-size: cover;
             background-attachment: fixed;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
         .header {
             position: relative;
@@ -71,6 +72,7 @@
             color: #fff;
             padding: 20px;
             border-radius: 10px;
+            position: relative; /* Added for GIF positioning */
         }
         .game-card {
             transition: transform 0.3s, box-shadow 0.3s;
@@ -172,10 +174,22 @@
                 font-size: 1.5em;
             }
         }
+        .side-gif {
+            position: fixed;
+            top: 20%;
+            width: 100px;
+            z-index: 1000;
+        }
+        .side-gif.left {
+            left: 10px;
+        }
+        .side-gif.right {
+            right: 10px;
+        }
     </style>
 </head>
 <body>
-
+    
     <div class="header">
         <video autoplay muted loop>
             <source src="casino-video.mp4" type="video/mp4">
@@ -264,20 +278,14 @@
         <p>&copy; 2024 AMANDA RODRIGUEZ. All rights reserved.</p>
         <p><a href="https://your-website.com/contact">Contact Us</a> | <a href="https://your-website.com/privacy">Privacy Policy</a></p>
     </footer>
+    <!-- GIFs on the sides -->
+    <img src="https://github.com/uzzubaba07/casino-games/blob/main/giphy.webp?raw=true" class="side-gif left" alt="Side GIF Left">
+    <img src="https://github.com/uzzubaba07/casino-games/blob/main/giphy2.webp?raw=true" class="side-gif right" alt="Side GIF Right">
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Sound Effect Script -->
-    <script>
-        function playSound() {
-            var audio = new Audio('https://github.com/uzzubaba07/casino-games/blob/main/click-sound.mp3?raw=true');
-            audio.play();
-        }
-        
-        document.querySelectorAll('a, button, .game-card').forEach(function(element) {
-            element.addEventListener('click', playSound);
-        });
-    </script>
+    
+    
 </body>
 </html>
