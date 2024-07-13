@@ -8,12 +8,12 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Custom Font from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: #111;
             color: #fff;
             margin: 0;
@@ -284,6 +284,52 @@
             background: #ffca2c;
             transform: scale(1.1);
         }
+        /* Registration Form Styles */
+        .registration-form {
+            display: none;
+            background-color: rgba(34, 34, 34, 0.9);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .registration-form .form-group {
+            margin-bottom: 15px;
+        }
+        .registration-form label {
+            font-weight: bold;
+        }
+        .registration-form input, .registration-form textarea, .registration-form select {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #555;
+            color: #fff;
+        }
+        .registration-form input:focus, .registration-form textarea:focus, .registration-form select:focus {
+            outline: none;
+            background-color: #666;
+        }
+        .registration-form .btn {
+            background: #ffc107;
+            color: #111;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .registration-form .btn:hover {
+            background: #ffca2c;
+            transform: scale(1.1);
+        }
+        .progress-bar {
+            height: 5px;
+            background: #ffc107;
+            transition: width 0.3s;
+        }
     </style>
 </head>
 <body>
@@ -304,7 +350,7 @@
     <div class="header">
         <h1>AMANDA RODRIGUEZ</h1>
         <div class="cta">
-            <button onclick="playSound()">Register with your phone number to get 5$ Bonus</button>
+            <button onclick="scrollToForm()">Register with your phone number to get 5$ Bonus</button>
         </div>
     </div>
     <div class="container">
@@ -375,42 +421,35 @@
             </div>
         </div>
     </div>
-    <!-- User Reviews Section -->
-    <div class="container reviews">
-        <h2 class="text-center">User Reviews</h2>
+    <div class="reviews">
+        <h2>User Reviews</h2>
         <div class="review-card">
             <p class="reviewer">John Doe</p>
-            <p class="stars">
+            <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
-            </p>
-            <p class="review-text">"Amazing experience! The games are fantastic and the rewards are incredible."</p>
+            </div>
+            <p class="review-text">Amazing experience! The platform is user-friendly and the games are fantastic!</p>
         </div>
         <div class="review-card">
             <p class="reviewer">Jane Smith</p>
-            <p class="stars">
+            <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
-            </p>
-            <p class="review-text">"I love playing at Amanda Rodriguez's casino. The interface is user-friendly and the games are so much fun!"</p>
+            </div>
+            <p class="review-text">I love playing here! The bonuses are great and the customer service is top-notch.</p>
         </div>
-        <div class="review-card">
-            <p class="reviewer">Michael Johnson</p>
-            <p class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-            </p>
-            <p class="review-text">"Great variety of games and excellent customer support. Highly recommend this casino!"</p>
-        </div>
+        <!-- Add more review cards as needed -->
+    </div>
+    <!-- Google Form -->
+    <div class="container" id="googleFormContainer">
+        <iframe src="https://forms.gle/zE6sfqJX36qEe9pM6" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </div>
     <div class="attractive-lines">
         <p>Come and play the best games at our casino! Amazing rewards await you!</p>
@@ -452,6 +491,11 @@
         $(document).ready(function() {
             $('#welcomeModal').modal('show');
         });
+
+        // Scroll to Google Form
+        function scrollToForm() {
+            document.getElementById('googleFormContainer').scrollIntoView({ behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>
