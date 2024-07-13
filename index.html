@@ -391,6 +391,22 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-   
+    <!-- Sound Effect Script -->
+    <script>
+        function playSound() {
+            var audio = new Audio('https://github.com/uzzubaba07/casino-games/blob/main/click-sound.mp3?raw=true');
+            audio.play();
+        }
+
+        document.querySelectorAll('a, button, .game-card').forEach(function(element) {
+            element.addEventListener('click', playSound);
+        });
+
+        // Play welcome audio on page load
+        window.onload = function() {
+            var welcomeAudio = new Audio('https://github.com/uzzubaba07/casino-games/blob/main/welcome-audio.mp3?raw=true');
+            welcomeAudio.play();
+        }
+    </script>
 </body>
 </html>
