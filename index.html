@@ -21,7 +21,7 @@
         .header {
             position: relative;
             height: 400px;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.4); /* Adjusted opacity for brighter background */
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -173,13 +173,6 @@
             }
         }
     </style>
-    <!-- Sound Effect Script -->
-    <script>
-        function playSound() {
-            var audio = new Audio('click-sound.mp3');
-            audio.play();
-        }
-    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -296,5 +289,16 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Sound Effect Script -->
+    <script>
+        function playSound() {
+            var audio = new Audio('https://github.com/uzzubaba07/casino-games/blob/main/click-sound.mp3?raw=true');
+            audio.play();
+        }
+        
+        document.querySelectorAll('a, button, .game-card').forEach(function(element) {
+            element.addEventListener('click', playSound);
+        });
+    </script>
 </body>
 </html>
