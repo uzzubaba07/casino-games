@@ -259,9 +259,48 @@
             font-size: 1.2em;
             font-style: italic;
         }
+        /* Modal Styles */
+        .modal-content {
+            background-color: #333;
+            color: #fff;
+        }
+        .modal-header {
+            border-bottom: none;
+        }
+        .modal-footer {
+            border-top: none;
+        }
+        .modal-button {
+            background: #ffc107;
+            color: #111;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .modal-button:hover {
+            background: #ffca2c;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
+    <!-- Modal -->
+    <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="welcomeModalLabel">Welcome to AMANDA RODRIGUEZ PLATFORM</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn modal-button" id="playAudioButton">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="header">
         <h1>AMANDA RODRIGUEZ</h1>
         <div class="cta">
@@ -402,11 +441,17 @@
             element.addEventListener('click', playSound);
         });
 
-        // Play welcome audio on page load
-        window.onload = function() {
-            var welcomeAudio = new Audio('https://github.com/uzzubaba07/casino-games/blob/main/welcome-audio.mp3?raw=true');
+        // Play welcome audio after user interaction
+        document.getElementById('playAudioButton').addEventListener('click', function() {
+            var welcomeAudio = new Audio('/mnt/data/welcome-audio.mp3');
             welcomeAudio.play();
-        }
+            $('#welcomeModal').modal('hide');
+        });
+
+        // Show modal on page load
+        $(document).ready(function() {
+            $('#welcomeModal').modal('show');
+        });
     </script>
 </body>
 </html>
