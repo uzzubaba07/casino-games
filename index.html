@@ -202,6 +202,63 @@
                 display: none;
             }
         }
+        /* User Review Styles */
+        .reviews {
+            margin: 40px 0;
+            text-align: center;
+        }
+        .review-card {
+            background-color: #444;
+            color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px auto;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .review-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        .review-card::before, .review-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s;
+            z-index: -1;
+        }
+        .review-card::before {
+            left: 0;
+            transform: skewX(-15deg);
+        }
+        .review-card::after {
+            right: 0;
+            transform: skewX(15deg);
+        }
+        .review-card:hover::before {
+            transform: skewX(0deg) translateX(-50%);
+        }
+        .review-card:hover::after {
+            transform: skewX(0deg) translateX(50%);
+        }
+        .reviewer {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .stars {
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+        .review-text {
+            font-size: 1.2em;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -279,16 +336,53 @@
             </div>
         </div>
     </div>
+    <!-- User Reviews Section -->
+    <div class="container reviews">
+        <h2 class="text-center">User Reviews</h2>
+        <div class="review-card">
+            <p class="reviewer">John Doe</p>
+            <p class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </p>
+            <p class="review-text">"Amazing experience! The games are fantastic and the rewards are incredible."</p>
+        </div>
+        <div class="review-card">
+            <p class="reviewer">Jane Smith</p>
+            <p class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </p>
+            <p class="review-text">"I love playing at Amanda Rodriguez's casino. The interface is user-friendly and the games are so much fun!"</p>
+        </div>
+        <div class="review-card">
+            <p class="reviewer">Michael Johnson</p>
+            <p class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </p>
+            <p class="review-text">"Great variety of games and excellent customer support. Highly recommend this casino!"</p>
+        </div>
+    </div>
     <div class="attractive-lines">
         <p>Come and play the best games at our casino! Amazing rewards await you!</p>
     </div>
     <div class="social-media">
-        <a href="https://t.me/StRobbie88">Telegram</a>
-        <a href="https://facebook.com/profile.php?id=100088089669324&mibextid=ZbWKwL">Facebook</a>
+        <a href="https://t.me/yourcasino">Telegram</a>
+        <a href="https://facebook.com/yourcasino">Facebook</a>
     </div>
     <footer>
         <p>&copy; 2024 AMANDA RODRIGUEZ. All rights reserved.</p>
-        <p><a href="https://facebook.com/profile.php?id=100088089669324&mibextid=ZbWKw">Contact Us</a> | <a href="https://t.me/StRobbie88"">Privacy Policy</a></p>
+        <p><a href="https://your-website.com/contact">Contact Us</a> | <a href="https://your-website.com/privacy">Privacy Policy</a></p>
     </footer>
     <!-- GIFs on the sides -->
     <img src="https://github.com/uzzubaba07/casino-games/blob/main/giphy.webp?raw=true" class="side-gif left" alt="Side GIF Left">
