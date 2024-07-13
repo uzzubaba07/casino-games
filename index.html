@@ -14,12 +14,19 @@
             color: #fff;
             margin: 0;
             padding: 0;
+            background-image: url('https://github.com/uzzubaba07/casino-games/blob/main/background.jpg?raw=true');
+            background-size: cover;
+            background-attachment: fixed;
         }
         .header {
             position: relative;
             height: 400px;
-            background: url('casino-background.jpg') no-repeat center center/cover;
+            background: rgba(0, 0, 0, 0.6);
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
         }
         .header video {
             position: absolute;
@@ -30,11 +37,11 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
+            opacity: 0.5;
         }
         .header h1 {
             color: #ffc107;
             text-align: center;
-            padding-top: 150px;
             font-size: 3em;
             letter-spacing: 2px;
         }
@@ -50,6 +57,7 @@
             border-radius: 5px;
             font-size: 1.2em;
             cursor: pointer;
+            transition: background 0.3s;
         }
         .header .cta button:hover {
             background: #ffca2c;
@@ -59,7 +67,7 @@
         }
         .container {
             margin: 20px auto;
-            background-color: #222;
+            background-color: rgba(34, 34, 34, 0.9);
             color: #fff;
             padding: 20px;
             border-radius: 10px;
@@ -131,7 +139,7 @@
             color: #0056b3;
         }
         .parallax {
-            background-image: url('casino-background.jpg');
+            background-image: url('https://github.com/uzzubaba07/casino-games/blob/main/background.jpg?raw=true');
             min-height: 400px;
             background-attachment: fixed;
             background-position: center;
