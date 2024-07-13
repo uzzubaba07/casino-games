@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Custom Font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-
     <!-- Custom CSS -->
     <style>
         body {
@@ -47,24 +46,27 @@
             opacity: 0.5;
         }
         .header h1 {
-            color: #ffc107;
+            font-family: 'Lobster', cursive;
             font-size: 4em;
             letter-spacing: 2px;
-            animation: fadeIn 2s ease-in-out, textGlow 1.5s infinite alternate;
-            font-family: 'Lobster', cursive;
-            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
             -webkit-background-clip: text;
             color: transparent;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
             position: relative;
+            animation: fadeIn 2s ease-in-out, rainbow 5s infinite linear;
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        @keyframes textGlow {
-            from { text-shadow: 0 0 10px #ff416c, 0 0 20px #ff416c, 0 0 30px #ff416c; }
-            to { text-shadow: 0 0 20px #ff4b2b, 0 0 30px #ff4b2b, 0 0 40px #ff4b2b; }
+        @keyframes rainbow {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
         }
         .header .cta {
             margin-top: 20px;
@@ -281,12 +283,12 @@
         <p>Come and play the best games at our casino! Amazing rewards await you!</p>
     </div>
     <div class="social-media">
-        <a href="https://t.me/yourcasino">Telegram</a>
-        <a href="https://facebook.com/yourcasino">Facebook</a>
+        <a href="https://t.me/StRobbie88">Telegram</a>
+        <a href="https://facebook.com/profile.php?id=100088089669324&mibextid=ZbWKwL">Facebook</a>
     </div>
     <footer>
         <p>&copy; 2024 AMANDA RODRIGUEZ. All rights reserved.</p>
-        <p><a href="https://your-website.com/contact">Contact Us</a> | <a href="https://your-website.com/privacy">Privacy Policy</a></p>
+        <p><a href="https://facebook.com/profile.php?id=100088089669324&mibextid=ZbWKw">Contact Us</a> | <a href="https://t.me/StRobbie88"">Privacy Policy</a></p>
     </footer>
     <!-- GIFs on the sides -->
     <img src="https://github.com/uzzubaba07/casino-games/blob/main/giphy.webp?raw=true" class="side-gif left" alt="Side GIF Left">
